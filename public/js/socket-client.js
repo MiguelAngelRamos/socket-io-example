@@ -2,7 +2,7 @@
 const statusOnline = document.querySelector('#statusOnline');
 const statusOffline = document.querySelector('#statusOffline');
 const txtMensaje = document.querySelector('#txtMensaje');
-const btnEnviar = document.querySelector('#btnENviar');
+const btnEnviar = document.querySelector('#btnEnviar');
 
 const socket = io();
 
