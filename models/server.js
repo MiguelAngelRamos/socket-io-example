@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const http = require('http');
 const { Server: SocketIOServer } = require('socket.io');
+const { socketController } = require('../sockets/controller');
 
 class Server {
 
@@ -32,4 +33,12 @@ class Server {
     this.io.on('connection', socketController);
   }
 
+  listen() {
+    this.server.listen(this.port, () => {
+      console.log(`Servidor corriendo en el puerto: `, this.port);
+    });
+  }
+
 }
+
+module.exports = Server;
