@@ -14,6 +14,8 @@ class Server {
 
     // Middlewares
     this.middlewares();
+    // Socket
+    this.sockets();
   }
 
   middlewares() {
@@ -24,6 +26,10 @@ class Server {
 
     // Directorio Publico
     this.app.use(express.static('public'));
-
   }
+
+  sockets() {
+    this.io.on('connection', socketController);
+  }
+
 }
